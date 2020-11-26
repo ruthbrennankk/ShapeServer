@@ -1,12 +1,11 @@
 name:                ShapeExample2
 version:             0.1.0.0
-synopsis:            Simple shape example for CS4012
-description:         Simple shape example for CS4012
-homepage:            https://github.com/g-d-strong/ShapeExample1#readme
+synopsis:            Adapted simple shape example for CS4012 assignment 1 - ShapeServer
+homepage:            https://github.com/ruthbrennankk/ShapeServer
 license:             BSD3
 license-file:        LICENSE
-author:              Glenn Strong
-maintainer:          Glenn.Strong@scss.tcd.ie
+author:              Glenn Strong & Ruth Brennan
+maintainer:          brennar5@tcd.ie
 copyright:           2017 Glenn Strong
 category:            Web
 build-type:          Simple
