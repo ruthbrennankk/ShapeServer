@@ -1,0 +1,19 @@
+THING 1
+For getting the images have to host them on a local server due to "cannot access local resource" -- (Cannot open local file - Chrome: Not allowed to load local resource)
+
+Solution:
+
+    1) Open your terminal and type
+
+    npm install -g http-server
+
+    2) Go to the root folder that you want to serve you files and type:
+
+    http-server ./
+
+    3) Read the output of the terminal, something kinda http://localhost:8080 will appear.
+
+    Everything on there will be allowed to be got. Example:
+    background: url('http://localhost:8080/waw.png');
+
+THING 2?
