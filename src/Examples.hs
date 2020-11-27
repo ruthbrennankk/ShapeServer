@@ -13,7 +13,7 @@ renderAllTheShapes = do
 
 renderJustCircles :: IO ()
 renderJustCircles = do
-    renderC "src/images/justCircles.png" cusWindow justCirclesDrawing [1,2,3,4,5]
+    renderC "src/images/justCircles.png" cusWindow justCirclesDrawing [1,2]
       where justCirclesDrawing = [(scale (point 0.1 0.1) <+> translate (point 10 10), circle), (scale (point 0.1 0.1) <+> translate (point 45 45), circle), (scale (point 0.1 0.1) <+> translate (point 10 45), circle), (scale (point 0.1 0.1) <+> translate (point 10 45), circle)]
 
 renderDodecagon :: IO ()
@@ -28,11 +28,8 @@ renderOverlap = do
 
 renderDoubleTransform :: IO ()
 renderDoubleTransform = do
-    renderC "src/images/single_translate.png" cusWindow translateDrawing [2,4,1,3,5]
-    renderC "src/images/multiple_translates.png" cusWindow multipleTranslatesDrawing [2,4,1,3,5]
+    renderC "src/images/multiple_translate.png" cusWindow multipleTranslatesDrawing [2,4,1,3,5]
       where multipleTranslatesDrawing = [ (scale (point 0.1 0.1) <+> translate (point 10 10) <+> translate (point 5 7), square), (scale (point 0.1 0.1) <+> translate (point 45 45) <+> translate (point (-9) (-18)), square), (scale (point 0.1 0.1) <+> translate (point 4 8) <+> translate (point (5) (5)), square) ]
-            translateDrawing = [ (scale (point 0.1 0.1) <+> translate (point 15 17), square), (scale (point 0.1 0.1) <+> translate (point 36 27), square), (scale (point 0.1 0.1) <+> translate (point 9 13), square) ]
-
 {-
 generateDrawing :: Double -> (Transform,Shape)
 generateDrawing p = (scale (point p p), square)
@@ -52,6 +49,6 @@ squaresList = generateSquaresList 0.0 1.0 10
 
 {-
 main = do
-        render "src/images/z_zoutput.png" cusWindow exampleDrawing
-        -- render "z_zoutput.png" cusWindow squaresList
+        render "src/images/output.png" cusWindow exampleDrawing
+        -- render "z_output.png" cusWindow squaresList
 -}

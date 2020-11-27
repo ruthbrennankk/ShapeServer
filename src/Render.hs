@@ -76,15 +76,13 @@ render path win sh = writePng path $ generateImage pixRenderer w h
   5. Yellow - 255 255 51
 -}
 
--- eg. render "z_output.png" defaultWindow exampleDrawing
+-- eg. renderC "z_output.png" defaultWindow exampleDrawing [1,2,3]
 renderC :: String -> Window -> Drawing -> [Int] -> IO ()
 renderC path win d c = writePng path $ generateImage pixRenderer w h
-                                 
---renderC path win sh = writePng path $ generateImage pixRenderer w h
+
     where
       Window _ _ (w,h) = win
-      pixRenderer x y = PixelRGB8 r g b where --c = (colorForImage $ mapPoint win (x,y))
-                                            (r, g, b) = (colorForImage1 c $ mapPoint win (x,y))
+      pixRenderer x y = PixelRGB8 r g b where (r, g, b) = (colorForImage1 c $ mapPoint win (x,y))
 
       colorForImage1 :: [Int] -> Point -> (Pixel8, Pixel8, Pixel8)
       colorForImage1 c p | p `inside` d = 
