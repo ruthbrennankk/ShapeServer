@@ -2,7 +2,6 @@ module Render(Window,defaultWindow,myWindow,samples,render,renderC) where
 import Codec.Picture
 import Shapes
 
-
 --  A window specifies what part of the world to render and at which
 --  resolution.
 --  Values are top left & bottom right corner to be rendered, 
@@ -18,7 +17,6 @@ defaultWindow = Window (point (-1.5) (-1.5)) (point (1.5) (1.5)) (500,500)
 -- a 50x50 pixel image
 myWindow :: Double -> Double -> Double -> Double -> Int -> Int -> Window
 myWindow x1 y1 x2 y2 l1 l2 = Window (point x1 y1) (point x2 y2) (l1,l2)
-
 
 -- Generate a list of evenly spaced samples between two values.
 -- e.g. samples -1.5 +1.5 25 generates 25 samples evenly spaced

@@ -19,7 +19,7 @@ mult (Matrix r0 r1) v = Vector (cross r0 v) (cross r1 v)
 invert :: Matrix -> Matrix
 invert (Matrix (Vector a b) (Vector c d)) = matrix (d / k) (-b / k) (-c / k) (a / k)
   where k = a * d - b * c
-        
+
 -- 2x2 square matrices are all we need.
 data Matrix = Matrix Vector Vector
               deriving Show
@@ -48,8 +48,9 @@ empty, circle, square :: Shape
 empty = Empty
 circle = Circle
 square = Square
-polygon = Polygon -- Consider a polygon made up of N vertices (xi,yi) where i ranges from 0 to N-1. The last vertex (xN,yN) is assumed to be the same as the first vertex (x0,y0), that is, the polygon is closed. 
---polygon = Polygon
+-- Consider a polygon made up of N vertices (xi,yi) where i ranges from 0 to N-1.
+-- The last vertex (xN,yN) is assumed to be the same as the first vertex (x0,y0), that is, the polygon is closed.
+polygon = Polygon
 
 -- Transformations
 
@@ -71,11 +72,17 @@ transform Identity                   x = id x
 transform (Translate (Vector tx ty)) (Vector px py)  = Vector (px - tx) (py - ty)
 transform (Scale (Vector tx ty))     (Vector px py)  = Vector (px / tx)  (py / ty)
 transform (Rotate m)                 p = (invert m) `mult` p
+transform (Compose (Translate (Vector x1 y1)) (Translate (Vector x2 y2)) )  p = transform (Translate (Vector (x1+x2) (y1+y2))) p
 transform (Compose t1 t2)            p = transform t2 $ transform t1 p
 
 -- Drawings
 
 type Drawing = [(Transform,Shape)]
+
+{-
+doubleTranslate :: Drawing -> Drawing
+doubleTranslate (t, sh) =
+-}
 
 -- interpretation function for drawings
 

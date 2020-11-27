@@ -16,4 +16,16 @@ Solution:
     Everything on there will be allowed to be got. Example:
     background: url('http://localhost:8080/waw.png');
 
-THING 2?
+THING 2 - Colours
+{-
+  Colour Options with Codes (RGB)
+  1. Pink - 255 51 249
+  2. Blue - 51 113 255
+  3. Orange - 255 190 51
+  4. Purple - 165 51 255
+  5. Yellow - 255 255 51
+-}
+
+Note rendering priority in list order for shapes
+
+THING 3 - ?
